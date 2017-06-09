@@ -3,18 +3,32 @@
   <head>
     <meta charset="UTF-8">
     <title>Cat Clicker Game</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type=text/javascript></script>
   </head>
   <body>
-    <h1>Cat Clicker</h1>
-    <a href="">
-      <div id="cat">
-        <img src="images/cat.jpg" alt="picture of a cat">
-      </div>
-    </a>
-    <h3 id="counter"> </h3>
+    <div class="container">
+      <h1>Cat Clicker</h1>
+      <div class="row">
+        <div class="col-sm-6 bg-green">
+          <h3 id="cat-name1"></h3>
+          <a href="" id="cat1"><img src="images/cat.jpg" alt="picture of a cat"></a>
+          <h3 id="counter1"> </h3>
+        </div> <!-- end column -->
+
+      <div class="col-sm-6 bg-hazelnut">
+        <h3 id="cat-name2"></h3>
+        <a href="" id="cat2"><img src="images/cat2.jpg" alt="picture of a cat"></a>
+        <h3 id="counter2"> </h3>
+      </div> <!-- end column -->
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+
     <script src="app.js" type"text/javascript"></script>
   </body>
 </html>

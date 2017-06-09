@@ -6,3 +6,20 @@ body {
 h1 {
   text-transform: uppercase;
 }
+
+h1,
+h3 {
+  padding: 2rem 0;
+}
+
+img {
+  max-width: 400px;
+}
+
+.bg-green {
+  background-color: #578CA9;
+}
+
+.bg-hazelnut {
+  background-color: #CFB095;
+}
