@@ -3,23 +3,50 @@ body {
   text-align: center;
 }
 
-h1 {
-  text-transform: uppercase;
+.title {
+  border-bottom: 3px solid black;
+  margin-bottom: 2rem;
 }
 
 h1,
-h3 {
+h3,
+h4 {
   padding: 2rem 0;
+  text-transform: uppercase;
 }
 
 img {
   max-width: 400px;
+  padding: 2rem 0 ;
 }
 
-.bg-green {
+ul {
+  padding: 1rem;
+  text-align: left;
+}
+
+li {
+  list-style: none;
+}
+
+.bg-blue {
   background-color: #578CA9;
 }
 
 .bg-hazelnut {
   background-color: #CFB095;
+}
+
+.clickable {
+  color: white;
+  text-decoration: underline;
+}
+
+.clickable:hover{
+  color: #CFB095;
+}
+
+.cat-display {
+  height: 500px;
+  margin-left: 2rem;
 }
