@@ -20,6 +20,10 @@ img {
   padding: 2rem 0 ;
 }
 
+img:hover {
+  cursor: pointer;
+}
+
 ul {
   padding: 1rem;
   text-align: left;
@@ -40,6 +44,7 @@ li {
 .clickable {
   color: white;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .clickable:hover{
