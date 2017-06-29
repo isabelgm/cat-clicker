@@ -7,27 +7,32 @@
       {
         name: "Kitty Eyes",
         clickCount: 0,
-        image: "images/cat1.jpg"
+        image: "images/cat1.jpg",
+        adminViewShowing: false
       },
       {
         name: "Blue-Eyed Cat",
         clickCount: 0,
-        image: "images/cat2.jpg"
+        image: "images/cat2.jpg",
+        adminViewShowing: false
       },
       {
         name: "Snuggle Buddies",
         clickCount: 0,
-        image: "images/cat3.jpg"
+        image: "images/cat3.jpg",
+        adminViewShowing: false
       },
       {
         name: "Siesta Time",
         clickCount: 0,
-        image: "images/cat4.jpg"
+        image: "images/cat4.jpg",
+        adminViewShowing: false
       },
       {
         name: "Park Friends",
         clickCount: 0,
-        image: "images/cat5.jpg"
+        image: "images/cat5.jpg",
+        adminViewShowing: false
       }
     ]
   }
@@ -41,6 +46,7 @@
       //initiate views
       viewList.init();
       viewDisplay.init();
+      viewAdmin.init();
     },
 
     getCats: function(){
@@ -58,6 +64,11 @@
     increaseCounter: function(cat){
       model.currentCat.clickCount++;
       viewDisplay.render();
+    },
+
+    setAdminView: function(){
+      model.currentCat.adminViewShowing = true;
+      viewAdmin.render();
     }
   };
 
@@ -101,6 +112,26 @@ var viewList = {
   }
 };
 
+// view for admin area
+  var viewAdmin = {
+    init: function(){
+      this.adminButton = document.getElementById('admin-button');
+      this.adminForm = document.getElementById('form');
+      this.adminButton.addEventListener('click', function(){
+        octopus.setAdminView();
+      });
+      this.render();
+    },
+
+    render: function(){
+      var currentCat = octopus.getCurrentCat();
+      this.adminViewShowing = currentCat.adminViewShowing;
+      if (this.adminViewShowing === true){
+        this.adminForm.append("Hello World!");
+      }
+    }
+  };
+
 // view for cat display area
   var viewDisplay = {
     init: function(){
@@ -124,6 +155,8 @@ var viewList = {
       this.catImage.src = currentCat.image;
     }
   };
+
+
 
 
   octopus.init();
