@@ -117,6 +117,7 @@ var viewList = {
     init: function(){
       this.adminButton = document.getElementById('admin-button');
       this.adminForm = document.getElementById('form');
+      $("#form").hide();
       this.adminButton.addEventListener('click', function(){
         octopus.setAdminView();
       });
@@ -127,7 +128,8 @@ var viewList = {
       var currentCat = octopus.getCurrentCat();
       this.adminViewShowing = currentCat.adminViewShowing;
       if (this.adminViewShowing === true){
-        this.adminForm.append("Hello World!");
+        $("#form").show();
+        $("#admin-button").hide();
       }
     }
   };
