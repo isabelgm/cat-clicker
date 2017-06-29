@@ -69,6 +69,10 @@
     setAdminView: function(){
       model.currentCat.adminViewShowing = true;
       viewAdmin.render();
+    },
+
+    updateCurrentCatName: function(newCatName){
+      model.currentCat.name = newCatName;
     }
   };
 
@@ -123,12 +127,19 @@ var viewList = {
       this.adminButton.addEventListener('click', function(){
         octopus.setAdminView();
       });
+
+      $('#cat-name-input').on('input', function(){
+        var newCatName = $(this).val() //get the current value of the input field
+        octopus.updateCurrentCatName(newCatName);
+      });
+
       this.render();
     },
 
     render: function(){
       var currentCat = octopus.getCurrentCat();
       this.adminViewShowing = currentCat.adminViewShowing;
+
       if (this.adminViewShowing === true){
         $("#form").show();
         $("#admin-button").hide();
