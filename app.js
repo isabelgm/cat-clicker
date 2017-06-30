@@ -67,12 +67,19 @@
     },
 
     setAdminView: function(){
-      model.currentCat.adminViewShowing = true;
+      if(model.currentCat.adminViewShowing === false){
+        model.currentCat.adminViewShowing = true;
+      } else {
+        model.currentCat.adminViewShowing = false;
+      }
+
       viewAdmin.render();
     },
 
-    updateCurrentCatName: function(newCatName){
-      model.currentCat.name = newCatName;
+    updateCurrentCat: function(catNameInput, catNameURL, catNameClicks){
+      model.currentCat.name = catNameInput;
+      model.currentCat.image = catNameURL;
+      model.currentCat.clickCount = catNameClicks;
     }
   };
 
@@ -121,6 +128,7 @@ var viewList = {
     init: function(){
       this.adminButton = document.getElementById('admin-button');
       this.adminForm = document.getElementById('form');
+      this.saveButton = document.getElementById('save-button');
       $("#form").hide();
 
       //set event listeners for admin, save and cancel buttons
@@ -128,9 +136,14 @@ var viewList = {
         octopus.setAdminView();
       });
 
-      $('#cat-name-input').on('input', function(){
-        var newCatName = $(this).val() //get the current value of the input field
-        octopus.updateCurrentCatName(newCatName);
+      this.saveButton.addEventListener('click', function(e){
+        e.preventDefault();
+        var catNameInput =  $('#cat-name-input').val();
+        var catNameURL =  $('#cat-name-url').val();
+        var catNameClicks =  $('#cat-name-clicks').val();
+        octopus.updateCurrentCat(catNameInput, catNameURL, catNameClicks);
+        viewDisplay.render();
+        octopus.setAdminView();
       });
 
       this.render();
@@ -140,12 +153,14 @@ var viewList = {
       var currentCat = octopus.getCurrentCat();
       this.adminViewShowing = currentCat.adminViewShowing;
 
+      // show or hide admin form 
       if (this.adminViewShowing === true){
         $("#form").show();
-        $("#admin-button").hide();
         $("#cat-name-input").val(currentCat.name);
         $("#cat-name-url").val(currentCat.image);
         $("#cat-name-clicks").val(currentCat.clickCount);
+      } else {
+        $("#form").hide();
       }
     }
   };
