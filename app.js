@@ -167,6 +167,7 @@ var viewList = {
         $("#cat-name-clicks").val(currentCat.clickCount);
       } else {
         $("#form").hide();
+        $('#admin-button').show();
       }
     }
   };
