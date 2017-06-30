@@ -33,6 +33,11 @@ li {
   list-style: none;
 }
 
+label {
+  margin-top: 0.7rem;
+  margin-bottom: 0.3rem;
+}
+
 .bg-blue {
   background-color: #578CA9;
 }
@@ -54,4 +59,28 @@ li {
 .cat-display {
   height: 500px;
   margin-left: 2rem;
+}
+
+.button {
+  color: white;
+  text-transform: uppercase;
+  border: none;
+}
+
+.green-button {
+  background-color: #5A7247;
+}
+
+.yellow-button {
+  background-color: #F6D155;
+}
+
+#admin-button {
+  padding: 1rem 2rem;
+}
+
+#cancel-button, #save-button {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem 0.3rem 0;
 }
