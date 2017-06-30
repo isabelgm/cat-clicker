@@ -161,6 +161,7 @@ var viewList = {
       // show or hide admin form
       if (this.adminViewShowing === true){
         $("#form").show();
+        $('#admin-button').hide();
         $("#cat-name-input").val(currentCat.name);
         $("#cat-name-url").val(currentCat.image);
         $("#cat-name-clicks").val(currentCat.clickCount);
