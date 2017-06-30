@@ -129,6 +129,7 @@ var viewList = {
       this.adminButton = document.getElementById('admin-button');
       this.adminForm = document.getElementById('form');
       this.saveButton = document.getElementById('save-button');
+      this.cancelButton = document.getElementById('cancel-button');
       $("#form").hide();
 
       //set event listeners for admin, save and cancel buttons
@@ -146,6 +147,10 @@ var viewList = {
         octopus.setAdminView();
       });
 
+      this.cancelButton.addEventListener('click', function(){
+        octopus.setAdminView();
+      })
+
       this.render();
     },
 
@@ -153,7 +158,7 @@ var viewList = {
       var currentCat = octopus.getCurrentCat();
       this.adminViewShowing = currentCat.adminViewShowing;
 
-      // show or hide admin form 
+      // show or hide admin form
       if (this.adminViewShowing === true){
         $("#form").show();
         $("#cat-name-input").val(currentCat.name);
