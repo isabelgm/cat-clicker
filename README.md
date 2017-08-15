@@ -2,6 +2,10 @@
 This is a version of the game Cow Clicker. In the original version you get an image of a cow that you can click every 6 hours. 
 The goal of the game is to get as many clicks as possibles. 
 
+
+![Cat Clicker Screen](/images/screenshot.png)
+
+
 ## Why this game
 I created this game as project for my Udacity Nanodegree. The main goal was to create it using JavaScript only and to learn how to build
 and MVC structure from scratch. 
